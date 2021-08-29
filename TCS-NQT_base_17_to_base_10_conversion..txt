@@ -1,0 +1,36 @@
+# TCS-NQT base-17 to base-10 conversion.
+
+list1 = []
+c = 0
+sum1 = 0
+
+
+def alpha_to_num(q):
+    d = {'A':10, 'B':11, 'C':12, 'D':13, 'E':14, 'F':15, 'G':16}
+    
+    for i in d:
+        if i == q:
+            return d[i]
+        
+        
+
+n = input("Enter the number in base 17: ")
+
+
+
+for i in range(0, len(n)):
+    if n[i] == 'A' or n[i] == 'B' or n[i] == "C" or n[i] == 'D' or n[i] == "E" or n[i] == "F" or n[i] == 'G':
+        list1.append(alpha_to_num(n[i]))
+    else:
+        list1.append(n[i])
+        
+#print(list1)
+
+l2 = list1[::-1]
+
+
+for i in range(0, len(l2)):
+    sum1 = sum1 + (int(l2[i])*(17**c))
+    c += 1
+    
+print("The number in base 10 is: %d"%sum1)
